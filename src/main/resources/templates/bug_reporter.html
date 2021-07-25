@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+	<meta charset="UTF-8" />
+	<title>Bug Reporter Form</title>
+</head>
+<body>
+
+	<h1>****** Welcome to Bug Reporting Form ******</h1>
+	
+	<form action="#" th:action="@{/bugapp/bug_save}" th:object=${bug} method="POST">
+		<fieldset>
+		<legend>Bug insert Form</legend>
+		
+		<label for="bname">Bug Name:</label>
+		<input type="text" id="bname" name="bname" /><br /><br />
+		
+		<label for="bpath">Area Path:</label>
+		<input type="text" id="bpath" name="bpath" /><br /><br />
+		
+		<label for="bbuildnumber">Build Number:</label>
+		<input type="text" id="bbuildnumber" name="bbuildnumber" /><br /><br />
+		
+		<label for="bseverity">Severity</label>
+		<select name="bseverity" id="bseverity">
+			<option value="high">High</option>
+			<option value="medium">Medium</option>
+			<option value="low">Low</option>
+		</select><br /><br />
+		
+		<label for="bpriority">Priority</label>
+		<select name="bpriority" id="bpriority">
+			<option value="high">High</option>
+			<option value="medium">Medium</option>
+			<option value="low">Low</option>
+		</select><br /><br />
+		
+		<label for="bassignto">Assign to:</label>
+		<input type="text" id="bassignto" name="bassignto" /><br /><br />
+		
+		<label for="breportedby">Reported By:<label>
+		<input type="text" id="breportedby" name="breportedby" /><br /><br />
+		
+		<label for="breportedon">Reported On:</label>
+		<input type="date" id="breportedon" name="breportedon" /><br /><br />
+		
+		<label for="reason">Reason:</label>
+		<input type="text" id="reason" name="reason" /><br /><br />
+		
+		<label for="status">Status</label>
+		<select name="status" id="status">
+			<option value="new">New</option>
+			<option value="open">Open</option>
+			<option value="active">Active</option>
+		</select><br /><br />
+
+		
+		<label for="environment">Environment:</label>
+		<input type="text" id="environment" name="environment" /><br /><br />
+		
+		<label for="description">Description:</label><br />
+		<textarea name="description" id="description" cols="30" rows="5"></textarea><br />
+		
+		<label for="stepstoreproduce">Steps To Reproduce:</label><br />
+		<textarea name="stepstoreproduce" id="stepstoreproduce" cols="40" rows="10">
+		</textarea><br />
+		
+		<input type="submit" value="Save Bug"/>
+		
+		</fieldset>
+	</form>
+	
+</body>
+</html>

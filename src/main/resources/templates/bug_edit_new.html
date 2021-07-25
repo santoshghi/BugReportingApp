@@ -1,0 +1,77 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Bug Edit Page</title>
+</head>
+<body>
+
+	<h1> ****** Welcome to Bug Editing Form ****** </h1>
+	
+	<form action="#" th:action="@{/bugapp/bug_save}" th:object=${bug} method="POST">
+		<fieldset>
+		<legend>Bug Edit</legend>
+		
+		<label for="id">Bug Id:</label>
+		<input type="text" th:field="*{id}" readonly /><br /><br />
+		
+		<label for="bname">Bug Name:</label>
+		<input type="text" th:field="*{bname}" /><br /><br />
+		
+		<label for="bpath">Area Path:</label>
+		<input type="text" th:field="*{bpath}" /><br /><br />
+		
+		<label for="bbuildnumber">Build Number:</label>
+		<input type="text" th:field="*{bbuildnumber}" /><br /><br />
+		
+		<label for="severity">Severity</label>
+		<select th:field="*{bseverity}">
+			<option value="high">High</option>
+			<option value="medium">Medium</option>
+			<option value="low">Low</option>
+		</select><br /><br />
+		
+		<label for="bpriority">Priority</label>
+		<select th:field="*{bpriority}">
+			<option value="high">High</option>
+			<option value="medium">Medium</option>
+			<option value="low">Low</option>
+		</select><br /><br />
+		
+		<label for="bassignto">Assign to:</label>
+		<input type="text" th:field="*{bassignto}" /><br /><br />
+		
+		<label for="breportedby">Reported By:<label>
+		<input type="text" th:field="*{breportedby}" /><br /><br />
+		
+		<label for="breportedon">Reported On:</label>
+		<input type="date" th:field="*{breportedon}" /><br /><br />
+		
+		<label for="reason">Reason:</label>
+		<input type="text" th:field="*{reason}" /><br /><br />
+		
+		<label for="status">Status</label>
+		<select th:field="*{status}">
+			<option value="new">New</option>
+			<option value="open">Open</option>
+			<option value="active">Active</option>
+		</select><br /><br />
+		
+		<label for="environment">Environment:</label>
+		<input type="text" th:field="*{environment}" /><br /><br />
+		
+		<label for="description">Description:</label><br />
+		<textarea name="description" th:field="*{description}" cols="30" rows="5"></textarea><br />
+		
+		<label for="steptoreproduce">Step To Reproduce:</label><br />
+		<textarea name="steptoreproduce" th:field="*{stepstoreproduce}" cols="40" rows="10">
+		</textarea><br />
+		
+		<input type="submit" value="Save Edit"/>
+		<a th:href="@{/bugapp/bug_details}">Cancel</a>
+		
+		</fieldset>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<style>
+		table,th,td,tbody{
+		border: 1px solid black;
+		border-collapse:collapse;
+		padding: 10px;
+	}
+	</style>
+	<meta charset="UTF-8" />
+	<title>Reporter Dashboard</title>
+</head>
+<body>
+	<h1>********** Welcome To Reporter DashBoard **********</h1>
+
+	<form action="#" th:action="@{/bugapp/resolver}" th:object="${bug}" >
+		<fieldset>	
+		
+		<legend>Bug List</legend>
+		
+		<table>
+			<thead>
+				<td>Id</td>
+				<td>Bug Name</td>
+				<td>Area Path</td>
+				<td>Build Number</td>
+				<td>Severity</td>
+				<td>Priority</td>
+				<td>Assign to</td>
+				<td>Reported By</td>
+				<td>Reported On</td>
+				<td>Reason</td>
+				<td>Status</td>
+				<td>Environment</td>
+				<!--<td>Description</td>
+				<td>Step to Reproduce</td>-->
+				
+				<td>Action</td>
+				
+			</thead>
+			
+			<tbody>
+				<tr th:each="b: ${bug_list}">
+					<td th:text=${b.id}></td>
+					<td th:text=${b.bname}></td>
+					<td th:text=${b.bpath}></td>
+					<td th:text=${b.bbuildnumber}></td>
+					<td th:text=${b.bseverity}></td>
+					<td th:text=${b.bpriority}></td>
+					<td th:text=${b.bassignto}></td>
+					<td th:text=${b.breportedby}></td>
+					<td th:text=${b.breportedon}></td>
+					<td th:text=${b.reason}></td>
+					<td th:text=${b.status}></td>
+					<td th:text=${b.environment}></td>
+					
+					<td>
+					 <a th:href="@{'/bugapp/bug_update/' + ${b.id}}">Edit</a>
+					 &nbsp;&nbsp;&nbsp;
+					 <a th:href="@{'/bugapp/bug_delete/' + ${b.id}}">Delete</a>
+					 &nbsp;&nbsp;&nbsp;
+					 <a th:href="@{'/bugapp/bug_view/' + ${b.id}}">View</a>
+					</td>
+										
+				</tr>
+			</tbody>
+		
+		</table>
+		
+		</fieldset>
+		<input type="submit" value="Add Bug"/>
+
+
+	</form>
+	
+</body>
+</html>
