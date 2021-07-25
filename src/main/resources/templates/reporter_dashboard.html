@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<style>
-		table,th,td,tbody{
+		table,thead,td,tbody{
 		border: 1px solid black;
 		border-collapse:collapse;
 		padding: 10px;
@@ -14,7 +14,7 @@
 <body>
 	<h1>********** Welcome To Reporter DashBoard **********</h1>
 
-	<form action="#" th:action="@{/bugapp/resolver}" th:object="${bug}" >
+	<form action="#" th:action="@{/bugapp}" th:object="${bug}" >
 		<fieldset>	
 		
 		<legend>Bug List</legend>
@@ -33,9 +33,7 @@
 				<td>Reason</td>
 				<td>Status</td>
 				<td>Environment</td>
-				<!--<td>Description</td>
-				<td>Step to Reproduce</td>-->
-				
+						
 				<td>Action</td>
 				
 			</thead>

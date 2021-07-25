@@ -1,8 +1,8 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<!--<style>
-	table,th,td{
+	<<style>
+	table,thead,td{
 		border: 1px solid black;
 		border-collapse:collapse;
 		padding: 10px;
@@ -21,7 +21,7 @@
 		<legend>Bug List</legend>
 		
 		<table>
-			<th>
+			<thead>
 				<td>Id</td>
 				<td>Bug Name</td>
 				<td>Area Path</td>
@@ -39,7 +39,7 @@
 				<td>Remarks</td>
 				
 				<td>Action</td>
-			</th>
+			</thead>
 			
 			<tbody>
 				<tr th:each="b: ${bug_list}">

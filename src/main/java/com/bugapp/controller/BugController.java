@@ -28,10 +28,6 @@ public class BugController {
 		
 		model.addAttribute("bug", bug);
 		
-//		Bug b = new Bug();
-//		Long x = bug.getId(); 
-		System.out.println(bug.getId());
-		
 		return "bug_reporter";
 	}
 	
@@ -110,9 +106,6 @@ public class BugController {
 		
 		Optional<Bug> bug = bugService.get_bug_by_id(id);
 		model_view.addObject("bug", bug);
-		
-		
-			
 		
 		return model_view;
 	}
