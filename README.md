@@ -1,10 +1,8 @@
 # BugReportingApp
-The fearures are 
-1.login
-2.add bug
-3.edit bug
-4.view bug list
-5.delete bug list
+The features of the bug reporting app are, 
+1.Login by the reporter for reoprt the bug 
+2.Bug Reporter can add edti and delete the bug details from the Bug Reporter Dashboard
+3.Bug Resolver can edit and view the bug report that is send by the bug reporter.
 
 The Added feature of this app are, 
 1. when the status is new then the bug reporter can edit the bug file otherwise when the status is active or open then they cannot edit the file.
